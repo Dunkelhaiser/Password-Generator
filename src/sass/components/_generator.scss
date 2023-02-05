@@ -5,9 +5,10 @@
 
     padding: 4rem;
 
-    accent-color: $color-blue;
-    background-color: #fff;
+    accent-color: $light-blue;
+    background-color: $light-foreground;
     border-radius: 2em;
+    box-shadow: rgba(149 157 165 / 20%) 0 8px 24px;
 
     h1 {
         font-size: 2.8rem;
@@ -53,15 +54,17 @@
 
         &:hover {
             cursor: pointer;
-            color: $color-grey-light;
+            color: $light-grey-light;
         }
 
         &:active {
-            color: $color-grey-dark;
+            color: $light-grey-dark;
         }
     }
 
     button {
+        @include hover;
+
         cursor: pointer;
 
         max-width: 100%;
@@ -69,23 +72,21 @@
 
         font-size: 1.6rem;
         font-weight: bold;
-        color: $color-white;
+        color: $light-foreground;
 
-        background-color: $color-blue;
-        border-color: $color-blue-dark;
+        background-color: $light-blue;
+        border-color: $light-blue-dark;
         border-style: solid;
         border-width: 1px;
         border-radius: 0.35em;
-        outline-color: $color-blue-dark;
-
-        transition: all 0.2s ease-in-out;
+        outline-color: $light-blue-dark;
 
         &:hover {
-            background-color: $color-blue-light;
+            background-color: $light-blue-light;
         }
 
         &:active {
-            background-color: $color-blue-dark;
+            background-color: $light-blue-dark;
         }
     }
 
@@ -98,7 +99,7 @@
         height: 0.5rem;
         margin-bottom: 2rem;
 
-        background-color: $color-white-dark;
+        background-color: $light-background;
         border-radius: 2rem;
 
         &::before {
@@ -139,5 +140,49 @@
     label,
     span {
         font-size: 1.4rem;
+    }
+}
+
+#dark {
+    .container {
+        accent-color: $dark-blue;
+        background-color: $dark-foreground;
+        box-shadow: rgba(32 37 41 / 20%) 0 8px 24px;
+
+        i {
+            &:hover {
+                cursor: pointer;
+                color: $dark-text-light;
+            }
+
+            &:active {
+                color: $dark-text-dark;
+            }
+        }
+
+        input {
+            color: $dark-text;
+            background-color: $dark-blue;
+            border-color: $dark-blue-dark;
+        }
+
+        button {
+            color: $dark-text;
+            background-color: $dark-blue;
+            border-color: $dark-blue-dark;
+            outline-color: $dark-blue-dark;
+
+            &:hover {
+                background-color: $dark-blue-light;
+            }
+
+            &:active {
+                background-color: $dark-blue-dark;
+            }
+        }
+
+        .strength {
+            background-color: $dark-background;
+        }
     }
 }

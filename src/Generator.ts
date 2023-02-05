@@ -2,10 +2,17 @@ export {};
 
 const lengthSlider = document.querySelector("#pass-length") as HTMLInputElement;
 const generationButton = document.querySelector("#generation-button") as HTMLButtonElement;
+const themeButton = document.querySelector("#theme-button") as HTMLButtonElement;
 const options = document.querySelectorAll(".option input") as NodeListOf<HTMLInputElement>;
 const passwordField = document.querySelector("#password-field") as HTMLInputElement;
 const passwordStrength = document.querySelector(".strength") as HTMLDivElement;
 const copyButton = document.querySelector(".input-section i") as HTMLParagraphElement;
+
+let theme = localStorage.getItem("theme") || "light";
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+document.querySelector("body")!.id = theme;
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+document.querySelector('meta[name="theme-color"]')!.setAttribute("content", theme === "light" ? "#e7e7e7" : "#1a1c22");
 
 let length = Number(lengthSlider.value);
 
@@ -87,6 +94,16 @@ const copyPassword = () => {
     }, 3000);
 };
 
+const changeTheme = () => {
+    theme = theme === "light" ? "dark" : "light";
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    document.querySelector("body")!.id = theme;
+    localStorage.setItem("theme", theme);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    document.querySelector('meta[name="theme-color"]')!.setAttribute("content", theme === "light" ? "#e7e7e7" : "#1a1c22");
+};
+
 lengthSlider.addEventListener("input", changeLength);
 generationButton.addEventListener("click", generatePassword);
 copyButton.addEventListener("click", copyPassword);
+themeButton.addEventListener("click", changeTheme);
