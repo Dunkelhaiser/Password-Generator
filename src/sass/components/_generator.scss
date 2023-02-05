@@ -103,13 +103,36 @@
 
         &::before {
             content: "";
-
             position: absolute;
-
-            width: 50%;
             height: 100%;
+        }
 
-            background-color: $color-yellow;
+        &[id="weak"] {
+            &::before {
+                width: 25%;
+                background-color: $color-red;
+            }
+        }
+
+        &[id="medium"] {
+            &::before {
+                width: 50%;
+                background-color: $color-yellow;
+            }
+        }
+
+        &[id="strong"] {
+            &::before {
+                width: 75%;
+                background-color: $color-green;
+            }
+        }
+
+        &[id="excelent"] {
+            &::before {
+                width: 100%;
+                background-color: $color-excelent;
+            }
         }
     }
 
