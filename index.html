@@ -6,6 +6,43 @@
         <link rel="stylesheet" href="/src/css/main.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Password Generator</title>
+        <script src="https://kit.fontawesome.com/d9d08682e3.js" crossorigin="anonymous" defer></script>
     </head>
-    <body></body>
+    <body>
+        <div class="container">
+            <h1>Password Generator</h1>
+            <div class="pass-gen-wrapper">
+                <div class="input-section">
+                    <input disabled value="dasdasd" />
+                    <i class="fa-solid fa-copy" aria-label="copy"></i>
+                </div>
+                <div class="strength"></div>
+
+                <div>
+                    <label>Password length</label>
+                    <span>15</span>
+                    <input type="range" min="6" max="60" step="1" />
+                </div>
+                <div class="options">
+                    <div class="option">
+                        <input type="checkbox" id="lowercase" />
+                        <label for="lowercase">Lowercase</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="uppercase" />
+                        <label for="uppercase">Uppercase</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="numbers" />
+                        <label for="numbers">Numbers</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="symbols" />
+                        <label for="symbols">Symbols</label>
+                    </div>
+                </div>
+            </div>
+            <button type="button">Generate</button>
+        </div>
+    </body>
 </html>
