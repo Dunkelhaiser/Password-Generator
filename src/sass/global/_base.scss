@@ -50,21 +50,3 @@ select:-webkit-autofill:focus {
     box-shadow: 0 0 0 1000px white inset;
     transition: background-color 5000s ease-in-out 0s;
 }
-
-// ::-webkit-scrollbar-track {
-//     display: none;
-// }
-// ::-webkit-scrollbar {
-//     width: 10px;
-//     background-color: transparent;
-// }
-// ::-webkit-scrollbar-thumb {
-//     border-radius: 10px;
-//     background-color: rgba(82, 77, 77, 0.5);
-//     &:hover {
-//         background-color: rgba(107, 100, 100, 0.5);
-//     }
-//     &:active {
-//         background-color: rgba(66, 62, 62, 0.5);
-//     }
-// }
